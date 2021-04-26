@@ -1,0 +1,110 @@
+{
+    "3136": {
+      "region": "Cherkasy",
+      "amount": 5
+    },
+    "3137": {
+      "region": "Chernihiv",
+      "amount": 3
+    },
+    "3138": {
+      "region": "Chernivtsi",
+      "amount": 1
+    },
+    "3139": {
+      "region": "Crimea",
+      "amount": 0
+    },
+    "3140": {
+      "region": "Dnipropetrovs'k",
+      "amount": 1
+    },
+    "3141": {
+      "region": "Donets'k",
+      "amount": 3
+    },
+    "3142": {
+      "region": "Ivano-Frankivs'k",
+      "amount": 0
+    },
+    "3143": {
+      "region": "Kharkiv",
+      "amount": 4
+    },
+    "3144": {
+      "region": "Kherson",
+      "amount": 2
+    },
+    "3145": {
+      "region": "Khmel'nyts'kyy",
+      "amount": 1
+    },
+    "3146": {
+      "region": "Kiev",
+      "amount": 13
+    },
+    "3147": {
+      "region": "Kiev City",
+      "amount": 13
+    },
+    "3148": {
+      "region": "Kirovohrad",
+      "amount": 1
+    },
+    "3149": {
+      "region": "Luhans'k",
+      "amount": 0
+    },
+    "3150": {
+      "region": "L'viv",
+      "amount": 2
+    },
+    "3151": {
+      "region": "Mykolayiv",
+      "amount": 3
+    },
+    "3152": {
+      "region": "Odessa",
+      "amount": 5
+    },
+    "3153": {
+      "region": "Poltava",
+      "amount": 0
+    },
+    "3154": {
+      "region": "Rivne",
+      "amount": 8
+    },
+    "3155": {
+      "region": "Sevastopol'",
+      "amount": 0
+    },
+    "3156": {
+      "region": "Sumy",
+      "amount": 4
+    },
+    "3157": {
+      "region": "Ternopil'",
+      "amount": 1
+    },
+    "3158": {
+      "region": "Transcarpathia",
+      "amount": 2
+    },
+    "3159": {
+      "region": "Vinnytsya",
+      "amount": 1
+    },
+    "3160": {
+      "region": "Volyn",
+      "amount": 2
+    },
+    "3161": {
+      "region": "Zaporizhzhya",
+      "amount": 4
+    },
+    "3162": {
+      "region": "Zhytomyr",
+      "amount": 3
+    }
+}

@@ -1,0 +1,10 @@
+.region-name {
+    color: green; /* Цвет текста */
+    font-weight: bold; /* Жирное начертание */
+    font-size: 1.3em;
+}
+.info-label {
+    color: #005f87;
+    border-bottom: 1px dashed red; /* Подчеркивание под текстом */
+    font-size: 0.9em;
+}

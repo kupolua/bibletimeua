@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Map of Ukraine</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+<link rel="stylesheet" type="text/css" href="./text.css">
+<body>
+<script>
+    var UkraineMetaData = {};
+    var UkraineInstructors = {};
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+<script type="module">
+
+import define from "./index.js";
+import {Runtime, Library, Inspector} from "./runtime.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>
+
+<script>
+    window.addEventListener("load", function(){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let svg = document.querySelector("svg");
+
+                d3.json("./Ukraine-regions.json", function(data) {
+                    data.objects.UKR_adm1.geometries.forEach(oblData => {
+                        if(oblData.properties.NAME_1 === 'Kiev City') return;
+                        if(oblData.properties.NAME_1 === 'Sevastopol\'') return;
+
+                        let elementTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        let regionName = document.createTextNode(oblData.properties.NAME_1);
+
+                        elementTitle.setAttributeNS(null, 'class', 'region-name');
+                        elementTitle.setAttributeNS(null, 'x', UkraineMetaData[oblData.properties.ID_1].x - 20);
+                        elementTitle.setAttributeNS(null, 'y', UkraineMetaData[oblData.properties.ID_1].y - 10);
+                        elementTitle.appendChild(regionName);
+
+                        svg.appendChild(elementTitle);
+
+                        let elementInfo = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        let regionInstructorsAmount = document.createTextNode('instructors: ' + UkraineInstructors[oblData.properties.ID_1].amount);
+
+                        elementInfo.setAttributeNS(null, 'class', 'info-label');
+                        elementInfo.setAttributeNS(null, 'x', UkraineMetaData[oblData.properties.ID_1].x - 20);
+                        elementInfo.setAttributeNS(null, 'y', UkraineMetaData[oblData.properties.ID_1].y + 10);
+                        elementInfo.appendChild(regionInstructorsAmount);
+
+                        svg.appendChild(elementInfo);
+                    })
+                });
+
+                var elements = document.getElementsByClassName('observablehq');
+
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].childNodes.forEach(child => {
+                        if(child.hasAttribute('class') && child.getAttribute('class').includes('--')) child.style.display = "none";
+                    })
+                }
+
+
+                resolve();
+            }, 300)
+        });
+    });
+</script>
+
